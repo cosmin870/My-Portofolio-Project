@@ -10,43 +10,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d860017a16.js" crossorigin="anonymous"></script>
-
     <title>Cosmin Ilie</title>
 </head>
 
 <body>
 
     <header>
-
         <nav>
-            <span>cosmin</span>
-            <ul>
 
+            <span class="logo" id="logo">cosmin</span>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav_ul" id="nav_ul">
                 <li><a>HOME</a></li>
                 <li>ABOUT</li>
                 <li><a>SKILLS</a></li>
                 <li><a>PROJECTS</a></li>
                 <li><a>CONTACT</a></li>
-
             </ul>
 
         </nav>
 
         <div class="h1_wrapper">
+
             <div class="h1_container">
                 <h1>Hi, i'm Cosmin</h1>
                 <span id="sub_h1">Junior Web Developer</span>
             </div>
             <div class="socials">
-
                 <ul>
-
                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                     <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-
                 </ul>
-
             </div>
 
         </div>
@@ -55,9 +53,38 @@
             <div>Explore</div>
             <i class="fas fa-arrow-down"></i>
         </div>
-
     </header>
 
+    <div class="about">
+        <h2 id="about_title">About Me</h2>
+        <div class="about_container">
+            <article>
+                <h2>My Universe</h2>
+
+                <p>
+                    Since i was a little kid i've always had a passion for tech and IT.
+                    I started my journey in web development from my curiosity to understand how a web page is
+                    functioning,
+                    how it was built and how it evolves with each passing day.
+
+                </p>
+                <p>
+                    My constant desire to learn new things made me really passionate about programming. I fell in love
+                    with
+                    HTML, CSS and JavaScript.
+                </p>
+            </article>
+
+            <div id="img">
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
