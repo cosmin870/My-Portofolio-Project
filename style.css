@@ -141,25 +141,62 @@ nav ul > :last-child:hover {
 
 /* ================ABOUT============== */
 .about {
-  height: 80vh;
+  height: 100vh;
   max-width: 100%;
 }
+
 #about_title {
+  font-weight: 900;
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 3rem;
+  margin-bottom: 1em;
+}
+
+.flaticon_layer {
+  max-height: 30%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
+.flaticon_layer img {
+  max-width: 60px;
+}
+
+div.item {
+  display: block;
+  text-align: center;
+}
+.caption {
+  display: block;
+  margin-top: 1.3em;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 
 .about_container {
   display: flex;
+  justify-content: center;
+  margin-top: 5em;
 }
 
-.about_container > article {
-  max-width: 50%;
+#left_article {
+  display: flex;
+  width: 50%;
+}
+
+#right_article {
+  width: 50%;
+  border: solid purple;
 }
 
 #img {
-  height: 400px;
-  width: 400px;
+  height: 20em;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  box-sizing: border-box;
   border: solid red;
 }
 
