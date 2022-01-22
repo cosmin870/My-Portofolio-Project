@@ -3,23 +3,38 @@ html {
   margin: 0;
   font-size: 16px;
   font-family: Mulish, sans-serif;
+  background-color: #f3f4f5;
+}
+
+/*====================H E R O================*/
+
+.hero_section {
+  background-image: url(./resources/landing-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero_section img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 1px;
+  left: 1px;
+  margin: auto auto -1px -1px;
 }
 
 /*===========HEADER==========*/
 header {
-  background: url(./resources/bw-banner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
+  color: #fff;
   width: 100%;
   height: 100vh;
 }
-/*===========NAV==============*/
 nav {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-  /* align-items: center; */
   background-color: rgb(65, 63, 63);
   height: 50px;
 }
@@ -37,7 +52,7 @@ nav ul > :last-child {
   transition-timing-function: ease-in;
 }
 nav ul > :last-child:hover {
-  color: white;
+  color: #fff;
 }
 
 .logo {
@@ -80,7 +95,7 @@ nav ul > :last-child:hover {
   max-width: 70%;
   max-height: 70%;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   letter-spacing: 3px;
   color: #fff;
   transition-duration: 300ms;
@@ -136,7 +151,7 @@ nav ul > :last-child:hover {
   gap: 3em;
 }
 .socials i {
-  color: white;
+  color: #fff;
 }
 
 /* ================ABOUT============== */
@@ -148,19 +163,19 @@ nav ul > :last-child:hover {
 #about_title {
   font-weight: 900;
   text-align: center;
-  font-size: 3rem;
-  margin-bottom: 1em;
+  font-size: 3.5rem;
+  padding-bottom: 1em;
 }
 
 .flaticon_layer {
   max-height: 30%;
   display: flex;
   justify-content: center;
-  gap: 5%;
+  gap: 9%;
 }
 
 .flaticon_layer img {
-  max-width: 60px;
+  max-width: 70px;
 }
 
 div.item {
@@ -170,24 +185,38 @@ div.item {
 .caption {
   display: block;
   margin-top: 1.3em;
-  font-size: 1.4rem; /*=============================HORIZONTAL SCROLL==========*/
+  font-size: 1rem; /*=============================HORIZONTAL SCROLL==========*/
   font-weight: 400;
 }
 
 .about_container {
   display: flex;
   justify-content: center;
+  max-width: 65%;
   margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #left_article {
   display: flex;
-  width: 50%;
+  max-width: 66.66667%;
+  text-align: right;
+  box-sizing: border-box;
+  line-height: 2em;
+}
+
+#left_article h3 {
+  font-size: 2rem;
+}
+
+.left_column_container {
+  max-width: 50%;
 }
 
 #right_article {
-  width: 50%;
-  border: solid purple;
+  max-width: 33.33333%;
+  line-height: 2em;
 }
 
 #img {
@@ -197,11 +226,41 @@ div.item {
   margin-left: 1.5em;
   margin-right: 1.5em;
   box-sizing: border-box;
-  border: solid red;
+  border: 1px dodgerblue dotted;
+}
+
+/*===================COUNTERS=============*/
+
+.counter_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 18%;
+  margin-top: 3em;
+}
+
+.counter_item {
+  display: block;
+  text-align: center;
+}
+
+#counter_number {
+  font-size: 3.1rem;
+  border-bottom: 2px solid red;
+}
+
+.counter_attribute {
+  display: block;
+  margin-top: 1em;
+  font-size: 1.3rem;
 }
 
 /*===================QUERRIES==================*/
 @media screen and (max-width: 767px) {
+  header {
+    height: 90vh;
+  }
+
   .socials {
     display: none;
   }
