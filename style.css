@@ -161,9 +161,10 @@ nav ul > :last-child:hover {
 }
 
 #about_title {
+  text-transform: uppercase;
   font-weight: 900;
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   padding-bottom: 1em;
 }
 
@@ -190,9 +191,10 @@ div.item {
 }
 
 .about_container {
+  max-width: 65%;
+  max-height: 50%;
   display: flex;
   justify-content: center;
-  max-width: 65%;
   margin-top: 5em;
   margin-left: auto;
   margin-right: auto;
@@ -219,14 +221,17 @@ div.item {
   line-height: 2em;
 }
 
-#img {
-  height: 20em;
+#about_img {
+  max-height: 100%;
   width: 100%;
+  background-image: url(./resources/about_mini_image.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   box-sizing: border-box;
   margin-left: 1.5em;
   margin-right: 1.5em;
-  box-sizing: border-box;
-  border: 1px dodgerblue dotted;
+  border-radius: 10px;
 }
 
 /*===================COUNTERS=============*/
@@ -235,7 +240,7 @@ div.item {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 18%;
+  gap: 16%;
   margin-top: 3em;
 }
 
@@ -256,7 +261,11 @@ div.item {
 }
 
 /*===================QUERRIES==================*/
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 310px) and (max-width: 480px) {
+  /*MOBILE PHONES*/
+
+  /*===========HEADER/NAV============*/
+
   header {
     height: 90vh;
   }
@@ -313,5 +322,87 @@ div.item {
 
   .logo {
     margin-left: 1em;
+  }
+
+  /*=====================ABOUT ME==============*/
+  #about_title {
+    font-size: 1.5rem;
+    margin-top: 4em;
+  }
+
+  .flaticon_layer {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+  }
+
+  .flaticon_layer img {
+    max-width: 80px;
+  }
+
+  div.item {
+    margin-top: 2.5em;
+  }
+  .caption {
+    margin-top: 0.5em;
+  }
+
+  .about_container {
+    display: block;
+    max-height: unset;
+    max-width: unset;
+    height: fit-content;
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  #left_article {
+    flex-direction: column-reverse;
+    height: 100vh;
+    width: 100%;
+    max-width: unset;
+    text-align: unset;
+  }
+
+  #left_article h3 {
+    text-align: center;
+  }
+
+  .left_column_container {
+    width: 100%;
+    max-width: unset;
+  }
+
+  #right_article {
+    max-width: unset;
+    line-height: 1.8em;
+  }
+
+  #about_img {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  .counter_container {
+    width: 94%;
+    height: 50vh;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .counter_item {
+    text-align: unset;
+  }
+
+  #counter_number {
+    font-size: 2rem;
+  }
+
+  .counter_attribute {
+    display: inline;
   }
 }
