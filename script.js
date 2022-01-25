@@ -8,3 +8,14 @@ hamburger.addEventListener("click", () => {
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("clicked");
 });
+
+window.onload = function () {
+  const title = document.getElementById("skill_title");
+  window.addEventListener("scroll", scrollEffect);
+
+  function scrollEffect() {
+    if (window.scrollY >= 1750) {
+      title.classList.add("scrolled");
+    }
+  }
+};
