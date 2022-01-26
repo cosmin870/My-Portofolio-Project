@@ -9,13 +9,23 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("clicked");
 });
 
-window.onload = function () {
-  const title = document.getElementById("skill_title");
-  window.addEventListener("scroll", scrollEffect);
-
-  function scrollEffect() {
-    if (window.scrollY >= 1750) {
-      title.classList.add("scrolled");
-    }
-  }
+//observer animations
+const title = document.getElementById("skill_title");
+const options = {
+  root: null,
+  threshold: 0,
+  rootMargin: "0px",
 };
+
+const observer = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    }
+    console.log(entry);
+    entry.target.classList.add("scrolled");
+    observer.unobserve(entry.target);
+  });
+}, options);
+
+observer.observe(title);
