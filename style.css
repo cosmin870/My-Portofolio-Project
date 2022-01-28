@@ -35,8 +35,11 @@ nav {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-  background-color: rgb(65, 63, 63);
+  background-color: #1f1f1fb2;
+  width: 100%;
   height: 50px;
+  position: fixed;
+  z-index: 1;
 }
 nav ul {
   list-style-type: none;
@@ -46,7 +49,7 @@ nav ul {
   display: flex;
 }
 nav ul > :last-child {
-  color: #d1002c;
+  color: #f8d35f;
   transition-duration: 200ms;
   transition-property: color;
   transition-timing-function: ease-in;
@@ -55,9 +58,8 @@ nav ul > :last-child:hover {
   color: #fff;
 }
 
-nav a {
-  text-decoration: none;
-  color: inherit;
+nav li {
+  cursor: pointer;
 }
 
 .logo {
@@ -108,7 +110,7 @@ nav a {
   transition-timing-function: ease-in-out;
 }
 .h1_container:hover {
-  text-shadow: 3px 3px 3px #d1002c;
+  text-shadow: 3px 3px 3px #f8d35f;
 }
 #sub_h1 {
   font-size: 1.3rem;
@@ -136,7 +138,7 @@ nav a {
   transition-timing-function: ease-in-out;
 }
 .explore:hover {
-  text-shadow: 2px 2px 2px #d1002c;
+  text-shadow: 2px 2px 2px #f8d35f;
 }
 .explore > .fa-arrow-down {
   margin-top: 1em;
@@ -161,7 +163,7 @@ nav a {
 
 /* ================ABOUT============== */
 .about {
-  height: auto; /*================================HEIGHT BUG SOLVED=====================*/
+  height: auto; /*height bug ==========================================*/
   max-width: 100%;
 }
 
@@ -177,7 +179,7 @@ nav a {
   max-height: 30%;
   display: flex;
   justify-content: center;
-  gap: 9%;
+  gap: 7%;
 }
 
 .flaticon_layer img {
@@ -271,17 +273,10 @@ div.item {
   height: 100%;
   width: 100%;
   margin-top: 5%;
-  background-color: #323232;
-}
-
-#skills_wave {
-  display: block;
-  width: 100%;
-  max-height: 20vh; /*nu uita sa faci 20 % pt mobile */
-  position: relative;
-  bottom: 1px;
-  left: 1px;
-  margin-left: -1px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #313131e1;
+  border-radius: 50% 50% 50% 50% / 5% 5% 5% 5%;
 }
 
 .image_container {
@@ -311,6 +306,7 @@ div.item {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 7%;
 }
 
 .box {
@@ -318,18 +314,23 @@ div.item {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  border-radius: 30px;
-  height: 26%;
-  transition: all 0.2s ease-in-out;
+  border: solid transparent;
+  border-radius: 50% 50% 50% 50% / 100% 100% 100% 100%;
+  height: 24%;
+  transition: all 0.1s ease-out;
   cursor: pointer;
   font-size: 1.8vw;
   font-weight: 700;
   color: #fff;
+  opacity: 0.8;
 }
 
 .box:hover {
   transform: scale(1.1);
   box-shadow: 0px 12px 9px -5px #f3f4f5;
+  opacity: 1;
+  border-color: #fff;
+  z-index: 1;
 }
 
 .grid_item_1 {
@@ -341,11 +342,11 @@ div.item {
   background-color: #f03a47;
 }
 .grid_item_3 {
-  width: 30%;
+  width: 37%;
   background-color: #3c61b6;
 }
 .grid_item_4 {
-  width: 70%;
+  width: 63%;
   background-color: #f8d35f;
 }
 .grid_item_5 {
@@ -359,6 +360,7 @@ div.item {
 
 .skill_title_container {
   margin-right: auto;
+  margin-top: auto;
   max-height: 45%;
 }
 
@@ -366,7 +368,7 @@ div.item {
   color: #fff; /* aici bagi animatie font-size =============================*/
   transition: all 1.3s ease;
   font-weight: 700;
-  font-size: 3vw;
+  font-size: 2.7vw;
   opacity: 0;
 }
 #skill_title.scrolled {
@@ -381,8 +383,10 @@ div.item {
 .services_container {
   display: flex;
   justify-content: center;
+  gap: 7%;
   box-sizing: border-box;
   margin-top: 3%;
+  padding-bottom: 4%;
 }
 .services_container ul {
   list-style-type: none;
@@ -390,9 +394,14 @@ div.item {
 
 .services_container ul span {
   color: #fff;
-  font-size: 2vw;
+  font-size: 1.8vw;
   display: block;
   margin-right: 2%;
+}
+
+#first_list span,
+#second_list span {
+  width: 60%;
 }
 .services_container img {
   max-width: 10%;
@@ -404,6 +413,70 @@ div.item {
   margin-top: 10%;
 }
 
+/*=========================P R O J E C T S=======================*/
+.projects {
+  height: 100%;
+  width: 100%;
+}
+
+.projects_title {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+.projects_title h2 {
+  font-size: 2.7vw;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.project1_container,
+.project2_container {
+  height: 50%;
+  width: 75%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.project1_container h2,
+.project2_container h2 {
+  font-size: 2.7vw;
+  font-weight: 500;
+}
+
+.project2_container {
+  text-align: right;
+  margin-top: 5%;
+}
+
+.project1_desc,
+.project2_desc {
+  max-width: 50%;
+  margin: 5% auto 5% auto;
+}
+
+.project2_desc {
+  padding-left: 2%;
+}
+
+.project1_img,
+.project2_img {
+  height: 70vh;
+  width: 40%;
+  background-image: url(./resources/projects-test-img.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+}
+
+.bottom_icon {
+  max-width: 10%;
+}
+
 /*==============================================================QUERRIES=================================================================*/
 @media screen and (min-width: 310px) and (max-width: 480px) {
   /*MOBILE PHONES*/
@@ -411,7 +484,7 @@ div.item {
   /*===========HEADER/NAV============*/
 
   header {
-    height: 90vh;
+    height: 80vh;
   }
 
   .socials {
@@ -578,6 +651,10 @@ div.item {
     order: 3;
   }
 
+  #skill_list {
+    margin-top: auto;
+  }
+
   .box {
     font-size: 4vw;
     max-height: 35%;
@@ -627,5 +704,46 @@ div.item {
   #first_list li,
   #second_list li {
     margin: 0;
+  }
+
+  /*======================================PROJECTS==============================*/
+  .projects {
+    margin-top: 20%;
+  }
+
+  .project1_container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .projects_title h2 {
+    font-size: 6vw;
+    font-weight: 700;
+    letter-spacing: 4px;
+  }
+  .projects_title {
+    text-align: center;
+  }
+
+  .project2_container {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .project1_img,
+  .project2_img {
+    width: 100%;
+  }
+
+  .project1_desc,
+  .project2_desc {
+    width: 80%;
+    max-width: unset;
+    text-align: left;
+    font-size: 4.5vw;
+  }
+
+  .top_text h2 {
+    font-size: 7vw;
   }
 }

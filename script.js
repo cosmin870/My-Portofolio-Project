@@ -22,10 +22,36 @@ const observer = new IntersectionObserver(function (entries, observer) {
     if (!entry.isIntersecting) {
       return;
     }
-    console.log(entry);
-    entry.target.classList.add("scrolled");
+    entry.target.classList.toggle("scrolled");
     observer.unobserve(entry.target);
   });
 }, options);
 
 observer.observe(title);
+
+//smooth scroll
+const hero = document.getElementById("nav_home");
+const about = document.getElementById("nav_about");
+const skills = document.getElementById("nav_skills");
+const projects = document.getElementById("nav_projects");
+
+const heroSection = document.getElementById("my_hero_section");
+const aboutSection = document.getElementById("about_me_section");
+const skillsSection = document.getElementById("my_skills_section");
+const projectsSection = document.getElementById("my_projects_section");
+
+hero.addEventListener("click", () => {
+  heroSection.scrollIntoView({ behavior: "smooth" });
+});
+
+about.addEventListener("click", () => {
+  aboutSection.scrollIntoView({ behavior: "smooth" });
+});
+
+skills.addEventListener("click", () => {
+  skillsSection.scrollIntoView({ behavior: "smooth" });
+});
+
+projects.addEventListener("click", () => {
+  projectsSection.scrollIntoView({ behavior: "smooth" });
+});
