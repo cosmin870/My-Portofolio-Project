@@ -34,11 +34,13 @@ const hero = document.getElementById("nav_home");
 const about = document.getElementById("nav_about");
 const skills = document.getElementById("nav_skills");
 const projects = document.getElementById("nav_projects");
+const contact = document.getElementById("nav_contact");
 
 const heroSection = document.getElementById("my_hero_section");
 const aboutSection = document.getElementById("about_me_section");
 const skillsSection = document.getElementById("my_skills_section");
 const projectsSection = document.getElementById("my_projects_section");
+const contactSection = document.getElementById("my_contact_section");
 
 hero.addEventListener("click", () => {
   heroSection.scrollIntoView({ behavior: "smooth" });
@@ -54,4 +56,8 @@ skills.addEventListener("click", () => {
 
 projects.addEventListener("click", () => {
   projectsSection.scrollIntoView({ behavior: "smooth" });
+});
+
+contact.addEventListener("click", () => {
+  contactSection.scrollIntoView({ behavior: "smooth" });
 });

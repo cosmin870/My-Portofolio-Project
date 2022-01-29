@@ -2,7 +2,7 @@ body,
 html {
   margin: 0;
   font-size: 16px;
-  font-family: Mulish, sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #f3f4f5;
 }
 
@@ -125,7 +125,7 @@ nav li {
   position: relative;
   margin: auto;
   right: 7.2em;
-  top: 1.6em;
+  top: 2.2em;
 }
 /* ========EXPLORE BUTTON=========*/
 .explore {
@@ -275,7 +275,7 @@ div.item {
   margin-top: 5%;
   padding-top: 5%;
   padding-bottom: 5%;
-  background-color: #313131e1;
+  background-color: #141414ef;
   border-radius: 50% 50% 50% 50% / 5% 5% 5% 5%;
 }
 
@@ -420,10 +420,9 @@ div.item {
 }
 
 .projects_title {
-  box-sizing: border-box;
   width: 100%;
+  font-weight: 800;
   text-align: center;
-  font-weight: 700;
 }
 .projects_title h2 {
   font-size: 2.7vw;
@@ -475,6 +474,100 @@ div.item {
 
 .bottom_icon {
   max-width: 10%;
+}
+
+.top_text h2 {
+  font-weight: 600;
+}
+
+/* ==========================================C O N T A C T======================================*/
+.contact {
+  margin-top: 5%;
+  width: 100%;
+  height: 100vh;
+}
+
+.contact_wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: solid red;
+}
+
+.contact_form,
+.contact_icons {
+  width: 50%;
+  border: solid green;
+}
+
+.contact_title {
+  max-height: 30%;
+  margin-left: 6%;
+}
+.contact_title h2 {
+  font-size: 4.3vw;
+  font-weight: 700;
+}
+
+#contact_title_desc {
+  max-width: 80%;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.contact_form {
+  max-height: 100%;
+}
+
+#form {
+  box-sizing: border-box;
+  width: 93%;
+  height: fit-content;
+  margin-left: 6%;
+  margin-top: 8%;
+}
+
+.input_name,
+.input_email,
+.input_subject {
+  border: 0;
+  padding: 0;
+  height: 55px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 1.1rem;
+  padding-left: 15px;
+}
+
+.input_name {
+  width: 38.5%;
+  margin-right: 2.2%;
+}
+
+.input_email {
+  width: 38.5%;
+}
+
+.input_subject {
+  width: 80%;
+  margin-top: 2%;
+}
+
+.input_txt {
+  width: 79.5%;
+  min-height: 150px;
+  resize: none;
+  border: none;
+  margin-top: 2.5%;
+}
+
+.submit_btn > input {
+  width: 35%;
+  height: 45px;
+  border: 2px solid black;
+  margin-left: 45.2%;
 }
 
 /*==============================================================QUERRIES=================================================================*/
