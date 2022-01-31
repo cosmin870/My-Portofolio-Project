@@ -9,7 +9,7 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("clicked");
 });
 
-//observer animations
+//observer animations --skill page
 const title = document.getElementById("skill_title");
 const options = {
   root: null,
@@ -22,12 +22,27 @@ const observer = new IntersectionObserver(function (entries, observer) {
     if (!entry.isIntersecting) {
       return;
     }
-    entry.target.classList.toggle("scrolled");
+    entry.target.classList.add("scrolled");
     observer.unobserve(entry.target);
   });
 }, options);
 
 observer.observe(title);
+
+//observer animation fade ---navBar
+const navBar = document.getElementById("my_navbar");
+window.onload = () => {
+  if (window.scrollY === 0) {
+    navBar.classList.remove("scrolled");
+  }
+};
+window.addEventListener("scroll", (scrollEffect) => {
+  if (window.scrollY > 0) {
+    navBar.classList.add("scrolled");
+  } else if (window.scrollY === 0) {
+    navBar.classList.remove("scrolled");
+  }
+});
 
 //smooth scroll
 const hero = document.getElementById("nav_home");
@@ -37,9 +52,9 @@ const projects = document.getElementById("nav_projects");
 const contact = document.getElementById("nav_contact");
 
 const heroSection = document.getElementById("my_hero_section");
-const aboutSection = document.getElementById("about_me_section");
+const aboutSection = document.getElementById("left_article");
 const skillsSection = document.getElementById("my_skills_section");
-const projectsSection = document.getElementById("my_projects_section");
+const projectsSection = document.querySelector(".project1_img");
 const contactSection = document.getElementById("my_contact_section");
 
 hero.addEventListener("click", () => {
@@ -47,7 +62,7 @@ hero.addEventListener("click", () => {
 });
 
 about.addEventListener("click", () => {
-  aboutSection.scrollIntoView({ behavior: "smooth" });
+  aboutSection.scrollIntoView({ behavior: "smooth", block: "end" });
 });
 
 skills.addEventListener("click", () => {
@@ -55,7 +70,7 @@ skills.addEventListener("click", () => {
 });
 
 projects.addEventListener("click", () => {
-  projectsSection.scrollIntoView({ behavior: "smooth" });
+  projectsSection.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 
 contact.addEventListener("click", () => {

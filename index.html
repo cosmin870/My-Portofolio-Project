@@ -22,7 +22,7 @@
 
     <section class="hero_section" id="my_hero_section">
         <header>
-            <nav>
+            <nav id="my_navbar" class="scrolled">
 
                 <span class="logo" id="logo">cosmin</span>
                 <button class="hamburger" id="hamburger">
@@ -45,13 +45,13 @@
                     <h1>Hi, i'm Cosmin</h1>
                     <span id="sub_h1">Junior Web Developer</span>
                 </div>
-                <div class="socials">
+                <!-- <div class="socials">
                     <ul>
                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                         <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                     </ul>
-                </div>
+                </div> -->
 
             </div>
 
@@ -116,7 +116,7 @@
             <article id="right_article">
 
                 <p>
-                    Since i was a little kid i've always had a passion for tech and IT.
+                    I've always had a passion for tech and IT.
                     I started my journey in web development from my curiosity to understand how a web page is
                     functioning,
                     how it was built and how it evolves with each passing day.
@@ -222,7 +222,7 @@
 
                 <div class="bottom_text">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo quis exercitationem do</p>
-                    <img class="bottom_icon" src="./resources/check-mark.png">
+                    <!-- <img class="bottom_icon" src="./resources/check-mark.png"> -->
                 </div>
 
             </div>
@@ -243,7 +243,7 @@
 
                 <div class="bottom_text">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo quis exercitationem do</p>
-                    <img class="bottom_icon" src="./resources/check-mark.png">
+                    <!-- <img class="bottom_icon" src="./resources/check-mark.png"> -->
                 </div>
 
             </div>
@@ -286,19 +286,22 @@
 
                     </div>
 
-                    <input class="input_subject" placeholder="Subject" type="text" name="subject">
-                    <label class="input_label"></label>
-                    <small class="error"></small>
+                    <div id="bot_input_layout">
 
-                    <textarea class="input_txt" placeholder="Message" name="msg"></textarea>
-                    <label class="input_label"></label>
-                    <small class="error"></small>
+                        <input class="input_subject" placeholder="Subject" type="text" name="subject">
+                        <label class="input_label"></label>
+                        <small class="error"></small>
 
-                    <div class="submit_btn">
-                        <input type="submit" value="Send message!">
-                        <p id="success"></p>
+                        <textarea class="input_txt" placeholder="Message" name="msg"></textarea>
+                        <label class="input_label"></label>
+                        <small class="error"></small>
+
+                        <div class="submit_btn">
+                            <input type="submit" value="Send message!">
+                            <p id="success"></p>
+                        </div>
+
                     </div>
-
 
                 </form>
 
@@ -311,7 +314,7 @@
 
                     <div class="location_container">
                         <span class="contact_top_text">LOCATION</span>
-                        <span>Bucharest, Romania</span>
+                        <span id="my_city">Bucharest, Romania</span>
                     </div>
                 </div>
 
@@ -320,7 +323,7 @@
 
                     <div class="email_container">
                         <span class="contact_top_text">EMAIL</span>
-                        <p id="my_email">cosmin_ilie99@yahoo.com</p>
+                        <span id="my_email">cosmin_ilie99@yahoo.com</span>
                     </div>
 
                 </div>
