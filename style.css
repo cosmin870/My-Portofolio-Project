@@ -79,6 +79,8 @@ nav li {
 }
 
 .hamburger {
+  height: 50px;
+  width: 70px;
   position: relative;
   display: none;
   bottom: 4.5px;
@@ -89,13 +91,16 @@ nav li {
   font-size: 1.3rem;
   padding-top: 15px;
   padding-right: 1rem;
+  z-index: 1;
+}
+
+.fa-bars,
+.fa-times {
+  font-size: 2rem;
 }
 
 .hamburger:focus {
   outline: none;
-}
-.hamburger::before {
-  content: "MENU";
 }
 
 /*===============h1=============*/
@@ -155,6 +160,24 @@ nav li {
 .explore > .fa-arrow-down {
   margin-top: 1em;
 }
+.fa-arrow-down {
+  animation: move-down 2.5s infinite;
+}
+@keyframes move-down {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateY(15px);
+    text-shadow: 2px 2px 2px #f8d35f;
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 /*============SOCIALS============*/
 .socials {
   max-width: 30%;
@@ -377,14 +400,16 @@ div.item {
 }
 
 #skill_title {
-  color: #fff; /* aici bagi animatie font-size =============================*/
-  transition: all 1.7s ease;
+  color: #fff;
+  transition: opacity 2.5s ease, transform 1.3s ease;
   font-weight: 700;
   font-size: 2.7vw;
   opacity: 0;
+  transform: translateX(170%);
 }
 #skill_title.scrolled {
   opacity: 1;
+  transform: translateX(-10%);
 }
 
 #skill_title > li {
@@ -717,31 +742,48 @@ footer {
     display: block;
   }
 
-  .hamburger.clicked {
-    position: relative;
-    top: 0.1px;
-    color: #d1002c;
-    transition: all 0.1s;
+  #x_button {
+    display: none;
   }
-  .hamburger.clicked::before {
-    content: "";
+
+  #x_button.show {
+    display: block;
+  }
+  #hamburger.clicked {
+    display: none;
   }
 
   .nav_ul {
-    display: none;
-    width: 100%;
+    position: absolute;
+    left: 100%;
+    width: 40%;
+    height: 100vh;
     box-sizing: border-box;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+    opacity: 0.4;
+    background-color: #373737;
+    transition: transform 0.3s ease-in-out, opacity 0.7s ease;
+    border-left: 4px solid #f8d35f;
+    border-radius: 30% 0% 0% 30% / 100% 0% 0% 100%;
+  }
+
+  .nav_ul li {
+    margin-top: 5%;
+    font-size: 4.5vw;
+    color: #fff;
+  }
+
+  #nav_home {
+    margin-top: 50px;
   }
 
   .nav_ul.show {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: rgb(48, 52, 105);
-    z-index: 1;
+    transform: translateX(-100%);
+    opacity: 1;
   }
 
   .logo {
