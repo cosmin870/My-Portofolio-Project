@@ -30,10 +30,11 @@ const options = {
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
+      entry.target.classList.remove("scrolled");
       return;
     }
-    entry.target.classList.add("scrolled");
-    observer.unobserve(entry.target);
+    entry.target.classList.toggle("scrolled");
+    // observer.unobserve(entry.target);
   });
 }, options);
 
@@ -47,7 +48,7 @@ window.onload = () => {
   }
 };
 window.addEventListener("scroll", (scrollEffect) => {
-  if (window.scrollY > 0) {
+  if (window.scrollY > 0 && window.scrollY < 10) {
     navBar.classList.add("scrolled");
   } else if (window.scrollY === 0) {
     navBar.classList.remove("scrolled");
