@@ -19,42 +19,6 @@ hamburgerXButton.addEventListener("click", () => {
   hamburgerXButton.classList.remove("show");
 });
 
-//observer animations --skill page
-const title = document.getElementById("skill_title");
-const options = {
-  root: null,
-  threshold: 0,
-  rootMargin: "0px",
-};
-
-const observer = new IntersectionObserver(function (entries, observer) {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      entry.target.classList.remove("scrolled");
-      return;
-    }
-    entry.target.classList.toggle("scrolled");
-    // observer.unobserve(entry.target);
-  });
-}, options);
-
-observer.observe(title);
-
-// animation fade ---navBar
-const navBar = document.getElementById("my_navbar");
-window.onload = () => {
-  if (window.scrollY === 0) {
-    navBar.classList.remove("scrolled");
-  }
-};
-window.addEventListener("scroll", (scrollEffect) => {
-  if (window.scrollY > 0 && window.scrollY < 10) {
-    navBar.classList.add("scrolled");
-  } else if (window.scrollY === 0) {
-    navBar.classList.remove("scrolled");
-  }
-});
-
 //smooth scroll
 const hero = document.getElementById("nav_home");
 const about = document.getElementById("nav_about");
@@ -101,3 +65,86 @@ projects.addEventListener("click", () => {
 contact.addEventListener("click", () => {
   contactSection.scrollIntoView({ behavior: "smooth" });
 });
+
+//========================OBSERVERS====================
+//about-page-observer
+
+const optionsAbout = {
+  root: null,
+  threshold: 0,
+  rootMargin: "0px",
+};
+
+const flatIcon = document.querySelector(".flaticon_layer");
+const aboutTitle = document.getElementById("about_title");
+const counters = document.querySelectorAll("#counter_number");
+const counterContainer = document.querySelector(".counter_container");
+//
+const observerAbout = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      // entry.target.classList.remove("scrolled");
+      return;
+    }
+    entry.target.classList.add("scrolled");
+    observerAbout.unobserve(entry.target);
+
+    //animated counters
+    counters.forEach((counter) => {
+      const speed = 200;
+      const animate = () => {
+        const value = +counter.getAttribute("data-target");
+        const data = +counter.innerText;
+
+        const time = value / speed;
+        if (data < value) {
+          counter.innerText = Math.ceil(data + time);
+          setTimeout(animate, 35);
+        } else {
+          counter.innerText = value;
+        }
+      };
+
+      if (counterContainer.classList.contains("scrolled")) {
+        animate();
+      }
+    });
+  });
+}, optionsAbout);
+
+observerAbout.observe(flatIcon);
+observerAbout.observe(aboutTitle);
+observerAbout.observe(counterContainer);
+
+//observer animations --skill page
+const title = document.getElementById("skill_title");
+const skillBox = document.querySelectorAll(".box");
+const lastSkillBox = document.querySelector(".grid_item_6");
+const options = {
+  root: null,
+  threshold: 0,
+  rootMargin: "0px",
+};
+
+const observer = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      // entry.target.classList.remove("scrolled");
+      return;
+    }
+    entry.target.classList.add("scrolled");
+    observer.unobserve(entry.target);
+
+    if (lastSkillBox.classList.contains("scrolled")) {
+      const interval = 600;
+      skillBox.forEach((box, index) => {
+        setTimeout(() => {
+          box.classList.add("showing");
+        }, index * interval);
+      });
+    }
+  });
+}, options);
+
+observer.observe(title);
+observer.observe(lastSkillBox);

@@ -37,22 +37,16 @@ nav {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-  background-color: transparent;
+  background-color: #373737;
   width: 100%;
-  height: 60px;
+  height: 50px;
   position: fixed;
   top: 0;
   z-index: 1;
+  border-bottom: 4px solid transparent;
   border-radius: 0% 0% 100% 100% / 0% 0% 30% 30%;
-  border-bottom: 4px solid #f8d35f;
-  transition: all 0.2s ease-out;
 }
 
-nav.scrolled {
-  height: 50px;
-  background-color: #373737;
-  border: none;
-}
 nav ul {
   list-style-type: none;
   display: flex;
@@ -208,17 +202,31 @@ nav li {
   text-align: center;
   font-size: 2.5rem;
   padding-bottom: 1em;
+  opacity: 0;
+  transition: all 1.4s ease;
+}
+
+#about_title.scrolled {
+  opacity: 1;
 }
 
 .flaticon_layer {
   max-height: 30%;
   display: flex;
   justify-content: center;
-  gap: 7%;
+  gap: 8%;
+  transform: translateY(40%);
+  opacity: 0;
+  transition: transform 0.7s ease, opacity 1.4s ease;
+}
+
+.flaticon_layer.scrolled {
+  transform: translateY(0%);
+  opacity: 1;
 }
 
 .flaticon_layer img {
-  max-width: 70px;
+  max-width: 90px;
 }
 
 div.item {
@@ -229,7 +237,8 @@ div.item {
   display: block;
   margin-top: 1.3em;
   font-size: 1rem; /*=============================HORIZONTAL SCROLL==========*/
-  font-weight: 400;
+  font-weight: 600;
+  color: #343a40;
 }
 
 .about_container {
@@ -240,6 +249,11 @@ div.item {
   margin-top: 5em;
   margin-left: auto;
   margin-right: auto;
+}
+
+.about_container p {
+  color: #495057;
+  font-weight: 600;
 }
 
 #left_article {
@@ -294,13 +308,18 @@ div.item {
 
 #counter_number {
   font-size: 3.1rem;
-  border-bottom: 2px solid red;
+  color: #ecc348;
+}
+#counter_number::after {
+  content: "%";
 }
 
 .counter_attribute {
   display: block;
   margin-top: 1em;
+  font-weight: 600;
   font-size: 1.3rem;
+  color: #22223b;
 }
 /*===================================SKILLS PAGE==========================*/
 
@@ -356,18 +375,18 @@ div.item {
   cursor: pointer;
   font-size: 1.8vw;
   font-weight: 700;
-  color: #fff;
+  /* color: #fff;
   opacity: 1;
-  box-shadow: 0px 12px 9px -5px #f3f4f5;
+  box-shadow: 0px 12px 9px -5px #f3f4f5; */
+  transition: all 0.7s ease;
 }
 
-/* .box:hover {
-  transform: scale(1.1);
+.box.showing {
+  /* transform: scale(1.1); */
   box-shadow: 0px 12px 9px -5px #f3f4f5;
   opacity: 1;
-  border-color: #fff;
-  z-index: 1;
-} */
+  color: #fff;
+}
 
 .grid_item_1 {
   width: 60%;
@@ -801,7 +820,7 @@ footer {
   }
 
   .flaticon_layer img {
-    max-width: 80px;
+    max-width: 90px;
   }
 
   div.item {
@@ -859,15 +878,24 @@ footer {
   }
 
   .counter_item {
+    height: 15%;
     text-align: unset;
+    display: flex;
+    justify-content: space-between;
   }
 
   #counter_number {
+    width: 84px;
     font-size: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .counter_attribute {
+    width: 60%;
     display: inline;
+    margin-bottom: auto;
+    margin-top: auto;
   }
 
   /*======================SKILLS PAGE=================*/
