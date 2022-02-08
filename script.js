@@ -1,3 +1,7 @@
+// window.onbeforeunload = () => {
+//   window.scrollTo(0, 0);
+// };
+
 //hamburger toggle
 
 const hamburger = document.getElementById("hamburger");
@@ -30,7 +34,7 @@ const heroSection = document.getElementById("my_hero_section");
 let aboutSection = document.getElementById("left_article");
 let aboutMobile = document.getElementById("about_me_section");
 const skillsSection = document.getElementById("my_skills_section");
-const projectsSection = document.querySelector(".project1_img");
+const projectsSection = document.querySelector(".projects_title");
 const contactSection = document.getElementById("my_contact_section");
 
 hero.addEventListener("click", () => {
@@ -99,7 +103,7 @@ const observerAbout = new IntersectionObserver(function (entries, observer) {
         const time = value / speed;
         if (data < value) {
           counter.innerText = Math.ceil(data + time);
-          setTimeout(animate, 35);
+          setTimeout(animate, 30);
         } else {
           counter.innerText = value;
         }
@@ -136,7 +140,7 @@ const observer = new IntersectionObserver(function (entries, observer) {
     observer.unobserve(entry.target);
 
     if (lastSkillBox.classList.contains("scrolled")) {
-      const interval = 600;
+      const interval = 400;
       skillBox.forEach((box, index) => {
         setTimeout(() => {
           box.classList.add("showing");
@@ -148,3 +152,30 @@ const observer = new IntersectionObserver(function (entries, observer) {
 
 observer.observe(title);
 observer.observe(lastSkillBox);
+
+//projects section OBSERVER
+
+const projectsTitle = document.querySelector(".projects_title");
+const projectOne = document.querySelector(".project1_container");
+const projectTwo = document.querySelector(".project2_container");
+
+const optionsProjects = {
+  root: null,
+  threshold: 0,
+  rootMargin: "0px",
+};
+
+const observerProjects = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      // entry.target.classList.remove("scrolled");
+      return;
+    }
+    entry.target.classList.add("scrolled");
+    observer.unobserve(entry.target);
+  });
+}, optionsProjects);
+
+observerProjects.observe(projectsTitle);
+observerProjects.observe(projectOne);
+observerProjects.observe(projectTwo);

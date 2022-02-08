@@ -44,7 +44,7 @@ nav {
   top: 0;
   z-index: 1;
   border-bottom: 4px solid transparent;
-  border-radius: 0% 0% 100% 100% / 0% 0% 30% 30%;
+  border-radius: 0% 0% 100% 100% / 0% 0% 35% 35%;
 }
 
 nav ul {
@@ -203,7 +203,7 @@ nav li {
   font-size: 2.5rem;
   padding-bottom: 1em;
   opacity: 0;
-  transition: all 1.4s ease;
+  transition: opacity 1.4s ease;
 }
 
 #about_title.scrolled {
@@ -459,7 +459,7 @@ div.item {
   width: 60%;
 }
 .services_container img {
-  max-width: 10%;
+  max-width: 12%;
 }
 
 .services_container ul > li {
@@ -478,7 +478,14 @@ div.item {
   width: 100%;
   font-weight: 800;
   text-align: center;
+  opacity: 0;
+  transition: all 1.4s ease;
 }
+
+.projects_title.scrolled {
+  opacity: 1;
+}
+
 .projects_title h2 {
   font-size: 2.7vw;
   margin-bottom: 5%;
@@ -493,6 +500,19 @@ div.item {
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
+}
+
+.project1_container,
+.project2_container {
+  transform: translateY(40%);
+  opacity: 0;
+  transition: transform 0.7s ease, opacity 1.4s ease;
+}
+
+.project1_container.scrolled,
+.project2_container.scrolled {
+  transform: translateY(0%);
+  opacity: 1;
 }
 
 .project1_container h2,
@@ -601,6 +621,12 @@ div.item {
   padding: 0;
   height: 55px;
   box-sizing: border-box;
+  background-color: #f3f4f5;
+}
+
+.input_txt,
+#submit_btn {
+  background-color: #f3f4f5;
 }
 
 input::placeholder,
@@ -656,7 +682,7 @@ textarea::placeholder {
 
 .contact_icons img {
   height: 100%;
-  width: 50%;
+  width: 40%;
 }
 
 .location_icon_wrapper,
@@ -671,8 +697,12 @@ textarea::placeholder {
   flex-direction: row-reverse;
 }
 
+.email_container {
+  margin-right: auto;
+}
+
 #my_email {
-  font-size: 1.5vw;
+  font-size: 1.4vw;
 }
 
 .location_container,
@@ -721,10 +751,28 @@ footer {
 }
 
 .top_border {
-  box-sizing: border-box;
-  height: 20%;
-  width: 60%;
+  border-top: 2px solid #f3f4f5;
+  height: 60%;
+  width: 80%;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5%;
+}
+
+.top_border a {
+  text-decoration: none;
+  color: #f3f4f5;
+  width: fit-content;
+}
+
+.copyright {
+  width: 80%;
+  margin: 2% auto;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #f3f4f5;
 }
 
 /*==============================================================QUERRIES=================================================================*/
@@ -1147,5 +1195,11 @@ footer {
   }
   .media_container li {
     margin-top: 15px;
+  }
+
+  /* =============================FOOTER======================*/
+  .top_border,
+  .copyright {
+    font-size: 2.9vw;
   }
 }
