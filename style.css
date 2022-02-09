@@ -154,6 +154,7 @@ nav li:hover {
   letter-spacing: 0.4rem;
   font-weight: 700;
   cursor: default;
+  will-change: transform;
   transition-duration: 300ms;
   transition-property: text-shadow;
   transition-timing-function: ease-in-out;
@@ -226,6 +227,7 @@ nav li:hover {
   gap: 8%;
   transform: translateY(40%);
   opacity: 0;
+  will-change: opacity, transform;
   transition: transform 0.7s ease, opacity 1.4s ease;
 }
 
@@ -318,6 +320,7 @@ div.item {
 #counter_number {
   font-size: 3.1rem;
   color: #ecc348;
+  will-change: contents;
 }
 #counter_number::after {
   content: "%";
@@ -384,7 +387,7 @@ div.item {
   cursor: default;
   font-size: 1.8vw;
   font-weight: 700;
-
+  will-change: opacity, box-shadow;
   transition: all 0.7s ease;
 }
 
@@ -430,6 +433,7 @@ div.item {
   transition: opacity 2s ease;
   font-weight: 700;
   font-size: 2.7vw;
+  will-change: opacity;
   opacity: 0;
 }
 #skill_title.scrolled {

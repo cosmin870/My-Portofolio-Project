@@ -1,6 +1,6 @@
-// window.onbeforeunload = () => {
-//   window.scrollTo(0, 0);
-// };
+window.onbeforeunload = () => {
+  window.scrollTo(0, 0);
+};
 
 //hamburger toggle
 
@@ -140,7 +140,7 @@ const observer = new IntersectionObserver(function (entries, observer) {
     observer.unobserve(entry.target);
 
     if (lastSkillBox.classList.contains("scrolled")) {
-      const interval = 400;
+      const interval = 500;
       skillBox.forEach((box, index) => {
         setTimeout(() => {
           box.classList.add("showing");
