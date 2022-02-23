@@ -1,3 +1,3 @@
-# My-Portofolio-Project
+My personal portfolio project
 
-##This will contain my first ever portofolio website made from scratch.
+Made with HTML, CSS and JavaScript
