@@ -6,6 +6,7 @@ html {
   font-family: "Open Sans", sans-serif;
   background-color: #f3f4f5;
   /* overflow-x: hidden; */
+  scroll-behavior: smooth;
 }
 
 /*====================H E R O================*/
@@ -549,8 +550,8 @@ div.item {
 .project1_img {
   max-height: 70vh;
   width: 40%;
-  background-image: url(./resources/poza1\ test-min.jpg);
-  background-size: cover;
+  background-image: url(./resources/p1.JPG);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 2px;
@@ -559,8 +560,8 @@ div.item {
 .project2_img {
   max-height: 70vh;
   width: 40%;
-  background-image: url(./resources/poza2\ test-min.jpg);
-  background-size: cover;
+  background-image: url(./resources/p2.JPG);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 2px;
