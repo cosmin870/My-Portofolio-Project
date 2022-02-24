@@ -1,8 +1,6 @@
-window.onbeforeunload = () => {
-  window.scrollTo(0, 0);
-};
-
 //hamburger toggle
+
+history.scrollRestoration = "manual";
 
 const hamburger = document.getElementById("hamburger");
 const navUl = document.getElementById("nav_ul");
@@ -81,7 +79,7 @@ const optionsAbout = {
 
 const flatIcon = document.querySelector(".flaticon_layer");
 const aboutTitle = document.getElementById("about_title");
-const counters = document.querySelectorAll("#counter_number");
+const counters = document.querySelectorAll(".counter-number");
 const counterContainer = document.querySelector(".counter_container");
 //
 const observerAbout = new IntersectionObserver(function (entries, observer) {

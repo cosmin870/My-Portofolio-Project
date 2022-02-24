@@ -318,12 +318,12 @@ div.item {
   text-align: center;
 }
 
-#counter_number {
+.counter-number {
   font-size: 3.1rem;
   color: #ecc348;
   will-change: contents;
 }
-#counter_number::after {
+.counter-number::after {
   content: "%";
 }
 
