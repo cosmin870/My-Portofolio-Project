@@ -770,6 +770,7 @@ footer {
   justify-content: center;
   flex-direction: column;
   gap: 2.5%;
+  font-size: 1.3vh;
 }
 
 .top_border a {
@@ -784,6 +785,7 @@ footer {
   display: flex;
   justify-content: center;
   border: 2px solid #f3f4f5;
+  font-size: 1.3vh;
 }
 
 /*==============================================================QUERRIES=================================================================*/
@@ -953,10 +955,10 @@ footer {
   }
 
   .counter_attribute {
-    width: 60%;
+    width: 40%;
     display: inline;
-    margin-bottom: auto;
-    margin-top: auto;
+    /* margin-bottom: auto;
+    margin-top: auto; */
   }
 
   /*======================SKILLS PAGE=================*/
@@ -1209,7 +1211,7 @@ footer {
   /* =============================FOOTER======================*/
   .top_border,
   .copyright {
-    font-size: 2.9vw;
+    font-size: 1.5vh;
   }
 }
 
@@ -1280,7 +1282,7 @@ footer {
 
   .top_border,
   .copyright {
-    font-size: 1.8vw;
+    font-size: 1.8vh;
   }
 }
 
@@ -1298,11 +1300,36 @@ footer {
   }
 
   .submit_btn > input {
-    font-size: 1.8vw;
+    font-size: 1.3vw;
   }
 
   .top_border,
   .copyright {
-    font-size: 1.3vw;
+    font-size: 1.5vh;
+  }
+}
+
+@media screen and (max-height: 530px) and (max-width: 721px) {
+  .explore {
+    display: none;
+  }
+
+  .h1_container {
+    max-width: unset;
+  }
+
+  .counter-number {
+    font-size: 2.1rem;
+  }
+  .counter_attribute {
+    font-size: 1rem;
+  }
+
+  #skills_img {
+    display: none;
+  }
+
+  #about_img {
+    background-size: contain;
   }
 }
