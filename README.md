@@ -1,7 +1,7 @@
 My personal portfolio project
 
 Made with HTML, CSS and JavaScript
-published at 
+published at https://cosmin870.github.io/project-portfolio/
 
 responsive design for mobile/tablet and pc 
 
