@@ -1,7 +1,7 @@
 My personal portfolio project
 
 Made with HTML, CSS and JavaScript
-published at https://cosmindynamics.online/
+published at 
 
 responsive design for mobile/tablet and pc 
 
